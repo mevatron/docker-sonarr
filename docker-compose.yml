@@ -5,5 +5,5 @@ sonarr:
   ports:
     - 8989:8989
   volumes:
-    /mnt/plex/Downloads/completed:/data/completed
-    /mnt/plex/TV:/data/media
+    - /mnt/plex/Downloads/completed:/data/completed
+    - /mnt/plex/TV:/data/media
