@@ -2,6 +2,8 @@ sonarr:
   image: mevatron/docker-sonarr
   container_name: sonarr
   restart: always
+  links:
+    - transmission
   ports:
     - 8989:8989
   volumes:
