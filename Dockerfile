@@ -13,7 +13,8 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E03280
 
 VOLUME ["/data/media"]
 VOLUME ["/data/completed"]
+VOLUME ["/config"]
 
 EXPOSE 8989
 
-CMD ["/usr/bin/mono", "/opt/NzbDrone/NzbDrone.exe"]
+CMD ["/usr/bin/mono", "/opt/NzbDrone/NzbDrone.exe", "--no-browser", "-data=/config"]
