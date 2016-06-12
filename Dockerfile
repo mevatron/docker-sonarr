@@ -7,7 +7,8 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E03280
   apt-get update && \
   apt-get install -y \
   mono-devel \
-  nzbdrone && \
+  nzbdrone \
+  mediainfo && \
   rm -rf /var/lib/apt/lists/* && \
   apt-get clean
 
@@ -17,4 +18,4 @@ VOLUME ["/config"]
 
 EXPOSE 8989
 
-CMD ["/usr/bin/mono", "/opt/NzbDrone/NzbDrone.exe", "--no-browser", "-data=/config"]
+CMD ["/usr/bin/mono", "/opt/NzbDrone/NzbDrone.exe", "-no-browser", "-data=/config"]
